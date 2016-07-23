@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AutomatonController">
+    <children>
+        <SplitPane dividerPositions="0.29797979797979796" layoutX="200.0" layoutY="111.0" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0">
+                    <children>
+                        <Button fx:id="nextGeneration" layoutX="22.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleNextGenerationButton" text="Next Generation" />
+                        <TextField fx:id="sizeBoard" layoutX="22.0" layoutY="45.0" promptText="Write size: " />
+                        <Label layoutX="83.0" layoutY="28.0" text="Size" />
+                  <Button fx:id="startButton" layoutX="22.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleStartButton" prefHeight="25.0" prefWidth="61.0" text="Start" />
+                  <ChoiceBox fx:id="algorithm" layoutX="22.0" layoutY="334.0" prefWidth="150.0" value="Convay">
+                      <items>
+                          <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Convay" />
+                              <String fx:value="Quadlife" />
+                              <String fx:value="Langton" />
+                              <String fx:value="Wireworld" />
+                          </FXCollections>
+                      </items>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="structure" layoutX="22.0" layoutY="382.0" prefWidth="150.0" />
+                  <Button fx:id="randomBoard" layoutX="22.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleRandomButton" text="Random" />
+                  <Button fx:id="makeBoard" layoutX="23.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleMakeBoard" prefHeight="25.0" prefWidth="61.0" text="Make" />
+                  <Button fx:id="createBoard" layoutX="22.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleCreateButton" prefHeight="25.0" prefWidth="61.0" text="Create" />
+                  <Button fx:id="stopButton" layoutX="102.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleStopButton" prefHeight="25.0" prefWidth="61.0" text="Stop" />
+                  <Button fx:id="clearButton" layoutX="190.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <Canvas fx:id="canvas" height="600.0" width="900.0" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
